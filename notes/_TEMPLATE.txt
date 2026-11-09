@@ -1,0 +1,14 @@
+title: Your article title
+date: 2026-11-09
+tag: Valuation
+summary: One sentence shown in the notes list.
+pdf: your-paper.pdf
+---
+Write the executive summary here. Leave a blank line between paragraphs.
+
+## Optional sub-heading
+
+Another paragraph. Use **double asterisks** for bold.
+
+- Bullet points work too
+- Start each line with a dash

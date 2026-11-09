@@ -1,0 +1,17 @@
+name: Update notes list
+on:
+  push:
+    paths: ["notes/*.md", "notes/*.txt"]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/update-notes.py
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add notes/index.json
+          git diff --cached --quiet || (git commit -m "Update notes list" && git push)

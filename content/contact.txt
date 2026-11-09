@@ -1,0 +1,8 @@
+# One row per line:  Label | text shown | link
+# Leave the link out for plain text.
+Email | you@example.com | mailto:you@example.com
+LinkedIn | linkedin.com/in/your-handle | https://www.linkedin.com/in/your-handle
+GitHub | github.com/your-handle | https://github.com/your-handle
+Other | [Substack / X / SSRN profile]
+# Optional line under the card:
+note: [Optional line: e.g. Happy to talk about markets, internships and good reading lists.]

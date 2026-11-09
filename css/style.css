@@ -1,0 +1,94 @@
+:root{
+  --page:#f3f6f4;       /* page background */
+  --panel:#e2ece9;      /* panels: window, content box, footer */
+  --teal:#0f5257;       /* header, headings, links */
+  --text:#16282a;       /* body text (also text on coral badges) */
+  --accent:#ff7f6b;     /* coral: fills, borders, active tab (never used as text) */
+  --grey:#4a5b5d;       /* secondary text */
+  --visited:#566466;    /* visited links */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{background:var(--page);color:var(--text);font:clamp(13px,1.6vh + .4vw,15px)/1.55 "Segoe UI",system-ui,Verdana,Tahoma,sans-serif;padding:clamp(6px,2vh,20px)}
+a{color:var(--teal);text-decoration:underline;text-underline-offset:2px;transition:background .1s,color .1s}
+a:visited{color:var(--visited)}
+a:hover{background:var(--teal);color:var(--page)}
+a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.mono{font-family:"Courier New",Courier,monospace}
+.win{height:100%;max-width:900px;margin:0 auto;display:flex;flex-direction:column;border:2px solid var(--accent);border-radius:6px;overflow:hidden;background:var(--panel)}
+
+/* title bar */
+.titlebar{background:var(--teal);color:var(--page);display:flex;justify-content:space-between;align-items:center;padding:7px 14px;font-weight:600;font-size:clamp(12px,1.5vh + .3vw,14px);letter-spacing:.01em}
+.titlebar .btns span{display:inline-block;width:10px;height:10px;border:1px solid var(--accent);border-radius:50%;margin-left:6px;vertical-align:middle}
+
+/* folder tabs */
+.tabs{display:flex;gap:4px;padding:10px 14px 0;background:var(--page);list-style:none;position:relative;z-index:1}
+.tabs a{display:block;padding:6px clamp(14px,3vw,26px);border:1px solid var(--accent);border-bottom:0;border-radius:6px 6px 0 0;background:var(--page);color:var(--teal);text-decoration:none;font-weight:600;position:relative;top:1px}
+.tabs a:visited{color:var(--teal)}
+.tabs a:hover{background:var(--teal);color:var(--page)}
+.tabs a.on{background:var(--panel);border-top:3px solid var(--accent);padding-bottom:8px;z-index:2}  /* covers the box border = "connected" */
+.tabs a.on:hover{background:var(--panel);color:var(--teal)}
+
+/* content box */
+main{flex:1;min-height:0;border-top:1px solid var(--accent);background:var(--panel);padding:clamp(10px,2.6vh,28px) clamp(14px,3vw,32px);overflow:hidden}
+main.scroll{overflow-y:auto}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--teal);line-height:1.2;letter-spacing:-.01em}
+h1{font-size:clamp(22px,4.6vh + 1vw,38px)}
+h2{font-size:clamp(20px,3.2vh + .8vw,28px);margin-bottom:6px}
+hr{border:0;border-top:1px dotted var(--accent);margin:clamp(8px,1.8vh,16px) 0}
+
+/* HOME */
+.home{height:100%;display:grid;gap:clamp(8px,2vh,18px) clamp(14px,3vw,30px);grid-template-columns:auto 1fr;grid-template-rows:auto auto 1fr;grid-template-areas:"photo head" "intro intro" "facts facts";align-content:start}
+.photo{grid-area:photo;width:clamp(76px,20vh,230px);aspect-ratio:3/4;border:2px solid var(--accent);border-radius:4px;background:var(--page);display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;color:var(--grey);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.head{grid-area:head;align-self:center}
+.tagline{font-family:Georgia,serif;font-style:italic;font-size:clamp(13px,2vh + .3vw,18px);margin-top:6px;border-left:3px solid var(--accent);padding-left:10px}
+.intro{grid-area:intro;font-family:Georgia,serif;font-size:clamp(13px,1.9vh + .3vw,17px);line-height:1.55}
+.facts{grid-area:facts;border-collapse:collapse;width:100%;align-self:start;border-top:1px solid var(--accent)}
+.facts th,.facts td{border-bottom:1px solid var(--accent);padding:clamp(4px,1vh,9px) 4px;text-align:left;vertical-align:top}
+.facts th{width:7.5em;color:var(--teal);font-weight:600}
+@media (min-width:700px){
+  .home{grid-template-areas:"photo head" "photo intro" "photo facts";grid-template-rows:auto auto 1fr}
+  .photo{width:clamp(150px,36vh,260px)}
+}
+/* .exp{grid-area:exp;min-height:0;overflow:hidden;max-width:620px} */
+
+/* NOTES */
+.notes-list{list-style:none}
+.notes-list li{border-bottom:1px dotted var(--accent);padding:10px 0;display:grid;grid-template-columns:8.5em 1fr auto;gap:3px 14px;align-items:baseline}
+.notes-list .t{font-family:Georgia,serif;font-size:1.12em;font-weight:bold}
+.notes-list .s{grid-column:2;color:var(--text);font-size:.93em}
+.date,.tag{font-family:"Courier New",Courier,monospace;font-size:12.5px}
+.date{color:var(--grey)}
+.tag{background:var(--accent);color:var(--text);border-radius:2px;padding:0 7px;font-weight:bold}
+.article{max-width:66ch}
+.article .meta{margin:6px 0 0;display:flex;gap:10px;align-items:center}
+.article .body{font-family:Georgia,"Times New Roman",serif;font-size:clamp(15px,1.2vw + 10px,17px);line-height:1.75}
+.article .body p{margin-bottom:1em}
+.article .body h3{margin:1.3em 0 .4em;font-size:1.15em}
+.back{display:inline-block;margin-bottom:8px}
+@media (max-width:620px){
+  .notes-list li{grid-template-columns:1fr auto}
+  .notes-list .date{grid-column:1;grid-row:1}
+  .notes-list .tag{grid-column:2;grid-row:1}
+  .notes-list .t,.notes-list .s{grid-column:1 / -1}
+}
+
+/* CONTACT */
+.contact{height:100%;display:flex;flex-direction:column;gap:clamp(8px,2vh,16px);justify-content:flex-start}
+.card{border:1px solid var(--accent);border-collapse:collapse;width:100%;max-width:560px}
+.card caption{background:var(--teal);color:var(--page);text-align:left;padding:5px 12px;font-weight:600}
+.card th,.card td{border:1px solid var(--accent);padding:clamp(4px,1.1vh,10px) 12px;text-align:left}
+.card th{background:var(--page);width:7.5em;color:var(--teal);font-weight:600}
+
+/* footer */
+footer{border-top:1px solid var(--accent);background:var(--page);padding:6px 14px;font-size:11.5px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;align-items:center}
+.counter{background:var(--text);color:var(--page);border-radius:2px;padding:0 6px;letter-spacing:2px}
+
+/* PDF button on article pages */
+.pdf-link{display:inline-block;margin:4px 0 8px;padding:6px 14px;border:2px solid var(--accent);border-radius:4px;background:var(--page);font-weight:600;font-family:"Segoe UI",system-ui,sans-serif;text-decoration:none}
+.pdf-link:visited{color:var(--teal)}
+.pdf-link:hover{background:var(--teal);color:var(--page)}
+.article .body ul{margin:0 0 1em 1.3em}
+.article .body li{margin-bottom:.3em}
+.notice{font-family:Georgia,serif}
