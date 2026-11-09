@@ -2,10 +2,8 @@
 name: Oedipus
 tagline: World is not a fucking nursey school
 intro: Hello, I'm Shivam, an engineering graduate from [College Name], currently based in [City, India]. With an academic background in engineering, I have developed an interest in finance, business and strategic decision-making, particularly in corporate finance, financial analysis and credit. My working knowledge includes financial statemet analysis, ratio analysis, corporate finance fundamentals, company research and industry benchmarking. I also have experience with Python, HTML, CSS, Flask and REST APIs, alongside working knowledge of Microsoft Excel and PowerPoint.
-Through independent projects, I have explored the financial performance and business models of companies such as Microsoft, Nike and Asian Paints. I am currently focused on strengthening my financial skills, gaining practical industry exposure and connecting with professionals across finance and business.
-
-This website serves as a space to present my work, share my research and exchange ideas.
-photo: images/kendall.jpg
+Through independent projects, I have explored the financial performance and business models of companies such as Microsoft, Nike and Asian Paints. I am currently focused on strengthening my financial skills, gaining practical industry exposure and connecting with professionals across finance and business.This website serves as a space to present my work, share my research and exchange ideas.
+photo: images/blimp.jpg
 ---
 # Optional quick-facts table. Remove the # at the start of a line to show it.
 2023-2026: Chief Financial Officer, JP Morgan
